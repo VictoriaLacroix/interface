@@ -8,7 +8,7 @@
  * This javascript file depends on the following libraries:
  *
  * jQuery: http://jquery.com/
- * js-kookie: https://github.com/js-cookie/js-cookie.git
+ * js-cookie: https://github.com/js-cookie/js-cookie.git
  */
 
 // -- Globals --
