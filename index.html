@@ -1,6 +1,25 @@
 <!DOCTYPE html>
+
+<!-- This HTML file was authored by Victoria Lacroix, Brandon Beneteau, Ruihua Guo and Kaitlynn Anderson-Butcher
+  for a film database/watchlist project in the COSC 4926 course at Laurentian University.
+
+  This HTML file depends on the following libraries:
+
+  Bootstrap: http://getbootstrap.com/
+-->
+
 <html lang="en">
   <head>
+    <title>Movie Watchlist</title>
+    <meta charset="utf-8"/>
+
+    <!-- Dependencies -->
+    <script src="jquery.js"></script>
+    <script src="js-cookie.js"></script>
+
+    <!-- Main script file -->
+    <script src="index.js"></script>
+
     <!-- Latest compiled and minified Bootstrap CSS -->
     <link rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -18,16 +37,16 @@
       crossorigin="anonymous">
     </script>
 
-    <title>Movie Watchlist</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- For Bootstrap -->
+    <!-- For Bootstrap -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
   </head>
-  <body>
+  <body onload="loadFilms()">
     <div class="container">
       <div class="row">
         <h1>Coming Soon!</h1>
       </div>
       <div class="row">
-        <div class=".col-md-8">
+        <div class=".col-md-4">
           <!-- import project -->
         </div>
       </div>
