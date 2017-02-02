@@ -11,6 +11,8 @@
  * js-cookie: https://github.com/js-cookie/js-cookie.git
  */
 
+window.onload = loadFilms;
+
 // -- Globals --
 var movieIDs = [];
 var movies = [];
