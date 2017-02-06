@@ -47,10 +47,14 @@
       </div>
       <div class="row"><br><br>
         <!-- Search bar -->
-        <form action="TBD.php">
+          <input id="searchBar" type="text" name="searchBar"> 
+          <button type="button" onclick="displayResults()">Search</button>    
+          
+		  <!--	   <form action="TBD.php">
           <input type="text" name="searchBar"> 
           <input type="button" onclick="alert('Working on your request...')" value="Search">
         </form>
+-->    
       </div>
       <div id="search-results">
         <!-- Insert results into here using Javascript -->
@@ -61,5 +65,28 @@
         </div>
       </div>
     </div>
+	
+    <!-- Script for search -->
+	<script src="main.js" type="text/javascript"></script>
+    <script>
+    function displayResults(){
+      var xhttp;
+      //initiate the http request based on browser version
+      if (window.XMLHttpRequest){
+        xhttp = new XMLHttpRequest();
+      } 
+      else{ // code for IE6, IE5
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }	  
+      xhttp.onreadystatechange = function(){
+        //loadFilms();
+        var toSearch = document.getElementById("searchBar").value; //grabs the text from search bar
+        //searchOMDBByTitle(toSearch, callback) //********having touble with callback
+        document.getElementById("search-results").innerHTML = toSearch; //displays the text that was searched in the search bar. Just for trace purposes
+      };
+      xhttp.open("GET", "test.txt", true);
+      xhttp.send(); //displays data on page
+    }
+    </script>
   </body>
 </html>
