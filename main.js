@@ -47,7 +47,7 @@ function loadFilms() {
   movieIDs = Cookies.get('movieIDs');
   ratings = Cookies.get('ratings');
   $.each(movieIDs, function(id) {
-    movies.push = getMovieById(id);
+    movies.push = fetchMovieFromOMDB(id);
   });
 }
 
@@ -55,7 +55,7 @@ function addMovieByID(id) {
   if(!arrayContains(arr, obj)) {
     movieIDs.push(id);
     ratings.push('');
-    movies.push(getMovieById(id));
+    movies.push(fetchMovieFromOMDB(id));
 
     Cookies.set('movieIDs', movieIDs);
     Cookies.set('ratings', ratings);
@@ -72,7 +72,7 @@ function setRatingByID(id, rating) {
 
 // -- OMDB stuff --
 
-function getMovieById(id) {
+function fetchMovieFromOMDB(id) {
   $.getJSON('http://omdbapi.com/?i=' + id, function(obj) {
     return createMovie(obj);
   });
@@ -82,7 +82,7 @@ function getMovieById(id) {
  * Searches the OMDB API for movies matching/containing the given title, then
  * executes the given callback function with the result.
  */
-function searchMovieByTitle(title, callback) {
+function searchOMDBByTitle(title, callback) {
   // TODO include more than just movies for the searches?
   $.getJSON('http://omdbapi.com/?s=' + title + '&type=movie',
       function(response) {
@@ -179,26 +179,15 @@ function arrayIndexOf(arr, obj) {
   }
   return -1;
 }
-/*
- *  Sets the status of a movie to either "watched", "unwatched", or "rated". 
- */
-function setStatus(id, status){
-  movieID = getMovieByID(id);
-  if(status == "watched"){
-    movieID.status = "watched";
-  }
-  else if(status == "rated"){
-    movieID.status = "rated";
-  }
-  else{ //assume "unwatched"
-    movieID.status = "unwatched";
-  }
+
+function getMovieById(id) {
+  return movies[arrayIndexOf(movieIDs, id)];
 }
 
 /*
- *  Get the status of a movie. Either "watched", "unwatched", or "rated".
+ * Sets the status of a movie to either "watched", "unwatched", or "rated".
  */
-function getStatus(id){
-  return getMovieByID(id).status;
+function setMovieStatus(id, stat) {
+  getMovieById(id).stat = stat;
 }
 
