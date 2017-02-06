@@ -22,7 +22,7 @@ var expandedMovie = '';
 /*
  * Movie object for page use.
  */
-function movie(id, title, year, poster, genre, plot, runtime) {
+function movie(id, title, year, poster, genre, plot, runtime, status) {
   this.id = id;
   this.title = title;
   this.year = year;
@@ -30,6 +30,7 @@ function movie(id, title, year, poster, genre, plot, runtime) {
   this.genre = genre;
   this.plot = plot;
   this.runtime = runtime;
+  this.status = status;
 }
 
 /*
@@ -37,7 +38,7 @@ function movie(id, title, year, poster, genre, plot, runtime) {
  */
 function createMovie(obj) {
   return new movie(obj.imdbID, obj.Title, obj.Year, obj.Poster, obj.Genre,
-    obj.Plot, obj.Runtime);
+    obj.Plot, obj.Runtime, obj.Status);
 }
 
 // -- Cookie stuff --
@@ -177,5 +178,27 @@ function arrayIndexOf(arr, obj) {
     }
   }
   return -1;
+}
+/*
+ *  Sets the status of a movie to either "watched", "unwatched", or "rated". 
+ */
+function setStatus(id, status){
+  movieID = getMovieByID(id);
+  if(status == "watched"){
+    movieID.status = "watched";
+  }
+  else if(status == "rated"){
+    movieID.status = "rated";
+  }
+  else{ //assume "unwatched"
+    movieID.status = "unwatched";
+  }
+}
+
+/*
+ *  Get the status of a movie. Either "watched", "unwatched", or "rated".
+ */
+function getStatus(id){
+  return getMovieByID(id).status;
 }
 
