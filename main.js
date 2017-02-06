@@ -17,6 +17,7 @@ window.onload = loadFilms;
 var movieIDs = [];
 var movies = [];
 var ratings = [];
+var statuses = [];
 var expandedMovie = '';
 
 /*
@@ -46,6 +47,7 @@ function createMovie(obj) {
 function loadFilms() {
   movieIDs = Cookies.get('movieIDs');
   ratings = Cookies.get('ratings');
+  statuses = Cookies.get('statuses');
   $.each(movieIDs, function(id) {
     movies.push = fetchMovieFromOMDB(id);
   });
@@ -67,6 +69,17 @@ function setRatingByID(id, rating) {
   if(index >= 0) {
     ratings[index] = rating;
     Cookies.set('ratings', ratings);
+  }
+}
+
+/*
+ * Sets the status of a movie to either "watched", "unwatched", or "rated".
+ */
+function setStatusByID(id, stat) {
+  var index = arrayIndexOf(movieIDs, id);
+  if(index >= 0) {
+    statuses[index] = stat;
+    Cookies.set('statuses', statuses);
   }
 }
 
@@ -184,10 +197,4 @@ function getMovieById(id) {
   return movies[arrayIndexOf(movieIDs, id)];
 }
 
-/*
- * Sets the status of a movie to either "watched", "unwatched", or "rated".
- */
-function setMovieStatus(id, stat) {
-  getMovieById(id).stat = stat;
-}
 
