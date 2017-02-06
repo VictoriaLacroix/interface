@@ -17,6 +17,7 @@ window.onload = loadFilms;
 var movieIDs = [];
 var movies = [];
 var ratings = [];
+var expandedMovie = '';
 
 /*
  * Movie object for page use.
@@ -45,7 +46,7 @@ function loadFilms() {
   movieIDs = Cookies.get('movieIDs');
   ratings = Cookies.get('ratings');
   $.each(movieIDs, function(id) {
-    movies.push = getMovieByID(id);
+    movies.push = getMovieById(id);
   });
 }
 
@@ -53,7 +54,7 @@ function addMovieByID(id) {
   if(!arrayContains(arr, obj)) {
     movieIDs.push(id);
     ratings.push('');
-    movies.push(getMovieByID(id));
+    movies.push(getMovieById(id));
 
     Cookies.set('movieIDs', movieIDs);
     Cookies.set('ratings', ratings);
@@ -70,7 +71,7 @@ function setRatingByID(id, rating) {
 
 // -- OMDB stuff --
 
-function getMovieByID(id) {
+function getMovieById(id) {
   $.getJSON('http://omdbapi.com/?i=' + id, function(obj) {
     return createMovie(obj);
   });
@@ -81,6 +82,7 @@ function getMovieByID(id) {
  * executes the given callback function with the result.
  */
 function searchMovieByTitle(title, callback) {
+  // TODO include more than just movies for the searches?
   $.getJSON('http://omdbapi.com/?s=' + title + '&type=movie',
       function(response) {
     var responseMovies = response.Search;
@@ -96,30 +98,63 @@ function searchMovieByTitle(title, callback) {
  * Creates a <div> tag based on the given movie's poster, title and year.
  */
 function generateSearchResultDiv(movie) {
-  // TODO figure out if more CSS is needed for aligns.
-  var result = '<div class=".col-md-2" style="text-align: center">'
+  var result = '<div class=".col-md-2" style="text-align: center">';
   result    += '<img src="' + movie.poster + '" alt="' + movie.title + '">';
   result    += '<p>' + movie.title + '</p>';
-  result    += '<p><i>' + movie.year + '</i></p>';
-  result    += '<button onclick="addMovieById' + movie.id
-               + '">Add to List</button>';
+  result    += '<button onclick="addMovieById(' + movie.id;
+               + ')">Add to List</button>';
   result    += '</div>';
   return result;
 }
 
-function generateMovieDiv(movie, rating) {
-  var result = '<div class=".col-md-4">';
+function generateClosedMovieDiv(movie) {
+  var result = '<div id="small-' + movie.id
+             + '" onclick="expandMovieDiv(' + movie.id
+             + ')" class=".col-md-3" style="text-align: center">';
   result    += '<img src="' + movie.poster + '" alt="' + movie.title + '">';
   result    += '</div>';
-  result    += '<div class=".col-md-8">';
+  return result;
+}
+
+function generateMovieInfoDiv(movie, rating) {
+  var result = '<div id="big-' + movie.id
+             + '" onclick="shrinkMovieDiv()" class="row">'
+  result    += '<div class=".col-md-3" style="text-align: center">';
+  result    += '<div class="row"><img src="' + movie.poster + '" alt="'
+                  + movie.title + '"></div>';
+  result    += '<div class="row">buttons</div>'; //buttons
+  result    += '</div>';
+  result    += '<div class=".col-md-9, center-block">';
   result    += '<div class="row"><p><h3>' + movie.title + '</h3></p></div>';
   result    += '<div class="row"><p><i>' + movie.plot + '</i></p></div>';
-  result    += '<div class="row"><p>' + movie.genre + '</p></div>'
+  result    += '<div class="row"><p>' + movie.genre + '</p></div>';
   result    += '<div class="row">';
-  result    += '<div class=".col-md-6"><p>' + movie.year + '</p></div>'
-  result    += '<div class=".col-md-6"><p>' + movie.runtime + '</p></div>'
-  result    += '</div>'
+  result    += '<div class=".col-md-6"><p>' + movie.year + '</p></div>';
+  result    += '<div class=".col-md-6"><p>' + movie.runtime + '</p></div>';
+  result    += '</div>';
+  result    += '</div>';
   return result;
+}
+
+/*
+ * Creates an info pane showing expanded movie info
+ */
+function expandMovieDiv(movie) {
+  shrinkMovieDiv(); //remove existing movie div
+  var expandedMovie = movie.id;
+  var newDiv = generateMovieInfoDiv(movie);
+  var smallDiv = document.getElementById('small-' + movie.id);
+  smallDiv.parent.append(newDiv);
+}
+
+/*
+ * Removes the expanded movie div from the document.
+ */
+function shrinkMovieDiv() {
+  var div = document.getElementById('big-' + expandedMovie);
+  if(div != null) {
+    div.parent.removeChild(div);
+  }
 }
 
 // Helper functions
