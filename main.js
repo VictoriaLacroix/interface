@@ -107,7 +107,11 @@ function searchOMDBByTitle(title, callback) {
     callback(results);
   });
 }
-
+function TESTsearchOMDBBYTitle(title){
+  $.getJSON('http://omdbapi.com/?s=' + title + '&type=movie', function(response){
+    console.log(response);
+  });
+}
 /**
  * Creates a <div> tag based on the given movie's poster, title and year.
  */

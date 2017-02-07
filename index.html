@@ -72,17 +72,16 @@
     function displayResults(){
       var xhttp;
       //initiate the http request based on browser version
-      if (window.XMLHttpRequest){
+      if(window.XMLHttpRequest){
         xhttp = new XMLHttpRequest();
       } 
       else{ // code for IE6, IE5
         xhttp = new ActiveXObject("Microsoft.XMLHTTP");
       }	  
       xhttp.onreadystatechange = function(){
-        //loadFilms();
         var toSearch = document.getElementById("searchBar").value; //grabs the text from search bar
-        //searchOMDBByTitle(toSearch, callback) //********having touble with callback
-        document.getElementById("search-results").innerHTML = toSearch; //displays the text that was searched in the search bar. Just for trace purposes
+        //alert(toSearch);		
+		document.getElementById("search-results").innerHTML = TESTsearchOMDBBYTitle(toSearch);	
       };
       xhttp.open("GET", "test.txt", true);
       xhttp.send(); //displays data on page
