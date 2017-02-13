@@ -80,8 +80,17 @@
       }	  
       xhttp.onreadystatechange = function(){
         var toSearch = document.getElementById("searchBar").value; //grabs the text from search bar
-        //alert(toSearch);		
-		document.getElementById("search-results").innerHTML = TESTsearchOMDBBYTitle(toSearch);	
+        //document.getElementById("search-results").innerHTML = TESTsearchOMDBBYTitle(toSearch);
+        
+        searchOMDBByTitle(toSearch,function(x){
+            console.log("CALLBACK CALLED!... " + x);
+        });
+        
+        //var data = TESTsearchOMDBBYTitle(toSearch);
+        //var json = JSON.parse(data);
+        //alert(json.Search[0].Title);
+ 
+
       };
       xhttp.open("GET", "test.txt", true);
       xhttp.send(); //displays data on page

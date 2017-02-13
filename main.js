@@ -109,8 +109,11 @@ function searchOMDBByTitle(title, callback) {
 }
 function TESTsearchOMDBBYTitle(title){
   $.getJSON('http://omdbapi.com/?s=' + title + '&type=movie', function(response){
-    console.log(response);
-  });
+    alert(response);
+    //$.each(response, function(index){
+      //return '{"Search":[{"Title":"You Are the Apple of My Eye","Year":"2011","imdbID":"tt2036416","Type":"movie"}]}';
+    //});
+  });  
 }
 /**
  * Creates a <div> tag based on the given movie's poster, title and year.
