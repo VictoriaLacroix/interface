@@ -95,26 +95,27 @@ function fetchMovieFromOMDB(id) {
  * Searches the OMDB API for movies matching/containing the given title, then
  * executes the given callback function with the result.
  */
-function searchOMDBByTitle(title, callback) {
+function searchOMDBByTitle(title) {
   // TODO include more than just movies for the searches?
-  $.getJSON('http://omdbapi.com/?s=' + title + '&type=movie',
+  $.getJSON('file:///C:/Users/Brandon/Desktop/HCI_Website/movie_Database.json',
       function(response) {
-    var responseMovies = response.Search;
-    var results;
-    $.each(responseMovies, function(arr) {
-      results.push(createMovie(obj));
+    var results = JSON.parse(JSON.stringify(response));
+    
+    var output = "";
+    $.each(response, function(arr) {
+      results.push(createMovie(response));
+      var current = response[arr].Title;
+      if (!current.search(title)){ //if search matches a title of movie in the database
+        output = output + "      " + JSON.stringify(response[arr]); //append all results
+        document.getElementById("search-results").innerHTML = output; //insert results in div
+        var newMovie = new movie(response[arr].imdbID,response[arr].Title,response[arr].Year,response[arr].Poster,response[arr].Genre,response[arr].Plot,response[arr].Runtime,response[arr].Status);
+        console.log(newMovie);
+      }
+      return output;
     });
-    callback(results);
   });
 }
-function TESTsearchOMDBBYTitle(title){
-  $.getJSON('http://omdbapi.com/?s=' + title + '&type=movie', function(response){
-    alert(response);
-    //$.each(response, function(index){
-      //return '{"Search":[{"Title":"You Are the Apple of My Eye","Year":"2011","imdbID":"tt2036416","Type":"movie"}]}';
-    //});
-  });  
-}
+
 /**
  * Creates a <div> tag based on the given movie's poster, title and year.
  */
@@ -202,6 +203,9 @@ function arrayIndexOf(arr, obj) {
 
 function getMovieById(id) {
   return movies[arrayIndexOf(movieIDs, id)];
+}
+function stringify (x) {
+    console.log(Object.prototype.toString.call(x));
 }
 
 

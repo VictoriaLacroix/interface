@@ -80,19 +80,9 @@
       }	  
       xhttp.onreadystatechange = function(){
         var toSearch = document.getElementById("searchBar").value; //grabs the text from search bar
-        //document.getElementById("search-results").innerHTML = TESTsearchOMDBBYTitle(toSearch);
-        
-        searchOMDBByTitle(toSearch,function(x){
-            console.log("CALLBACK CALLED!... " + x);
-        });
-        
-        //var data = TESTsearchOMDBBYTitle(toSearch);
-        //var json = JSON.parse(data);
-        //alert(json.Search[0].Title);
- 
-
+        searchOMDBByTitle(toSearch);
       };
-      xhttp.open("GET", "test.txt", true);
+      xhttp.open("GET", "Movie_Database.json", true);
       xhttp.send(); //displays data on page
     }
     </script>

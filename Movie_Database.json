@@ -1,0 +1,41 @@
+[
+{
+    "Title":"Star Wars: Episode IV - A New Hope",
+    "Year":"1977",
+    "Runtime":"121 min",
+    "Genre":"Action, Adventure, Fantasy",
+    "Plot":"Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a wookiee and two droids to save the galaxy from the Empire's world-destroying battle-station, while also attempting to rescue Princess Leia from the evil Darth Vader.",
+    "Poster":"https://images-na.ssl-images-amazon.com/images/M/MV5BZGEzZTExMDEtNjg4OC00NjQxLTk5NTUtNjRkNjA3MmYwZjg1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+    "imdbID":"tt0076759"
+},
+
+{
+    "Title":"Split",
+    "Year":"2016",
+    "Runtime":"117 min",
+    "Genre":"Horror, Thriller",
+    "Plot":"Three girls are kidnapped by a man with a diagnosed 23 distinct personalities, and must try and escape before the apparent emergence of a frightful new 24th.",
+    "Poster":"https://images-na.ssl-images-amazon.com/images/M/MV5BZTJiNGM2NjItNDRiYy00ZjY0LTgwNTItZDBmZGRlODQ4YThkL2ltYWdlXkEyXkFqcGdeQXVyMjY5ODI4NDk@._V1_SX300.jpg",
+    "imdbID":"tt4972582"
+},
+
+{
+    "Title":"Moonlight",
+    "Year":"2016",
+    "Runtime":"111 min",
+    "Genre":"Drama",
+    "Plot":"A timeless story of human self-discovery and connection, Moonlight chronicles the life of a young black man from childhood to adulthood as he struggles to find his place in the world while growing up in a rough neighborhood of Miami.",
+    "Poster":"https://images-na.ssl-images-amazon.com/images/M/MV5BNzQxNTIyODAxMV5BMl5BanBnXkFtZTgwNzQyMDA3OTE@._V1_SX300.jpg",
+    "imdbID":"tt4975722"
+},
+
+{
+    "Title":"Arrival",
+    "Year":"2016",
+    "Runtime":"116 min",
+    "Genre":"Drama, Mystery, Sci-Fi",
+    "Plot":"When twelve mysterious spacecraft appear around the world, linguistics professor Louise Banks is tasked with interpreting the language of the apparent alien visitors.",
+    "Poster":"https://images-na.ssl-images-amazon.com/images/M/MV5BMTExMzU0ODcxNDheQTJeQWpwZ15BbWU4MDE1OTI4MzAy._V1_SX300.jpg",
+    "imdbID":"tt2543164"
+}
+]
