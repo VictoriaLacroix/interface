@@ -101,10 +101,10 @@ function searchJSONBySearchBar() {
  * executes the given callback function with the result.
  */
 function searchJSONByTitle(title) {
-  $.getJSON('Movie_Database.json', function(response) {
-    console.log(JSON.stringify(response));
+  $.get('Movie_Database.json', function(response) {
+    console.log(response);
     var results;
-    $.each(response, function(item) {
+    $.each(JSON.parse(response), function(item) {
       if(title.toLowerCase() == item.Title.toLowerCase()) {
         results.push(item);
       }
