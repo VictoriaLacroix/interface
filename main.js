@@ -54,7 +54,7 @@ function loadFilms() {
 }
 
 function addMovieByID(id) {
-  // TODO add a notification?
+  // TODO add a notification
   if(!arrayContains(arr, obj)) {
     movieIDs.push(id);
     ratings.push('');
@@ -101,11 +101,10 @@ function searchJSONBySearchBar() {
  * executes the given callback function with the result.
  */
 function searchJSONByTitle(title) {
-  // TODO include more than just movies for the searches?
   $.getJSON('Movie_Database.json', function(response) {
-    //var results = JSON.parse(JSON.stringify(response));
+    console.log('response: ' + response);
     var results;
-    $.each(response, function(item) {
+    $.each($.parseJSON(response), function(item) {
       if(title.toLowerCase() == item.Title.toLowerCase()) {
         results.push(item);
       }
