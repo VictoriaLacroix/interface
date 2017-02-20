@@ -54,6 +54,7 @@ function loadFilms() {
 }
 
 function addMovieByID(id) {
+  // TODO add a notification?
   if(!arrayContains(arr, obj)) {
     movieIDs.push(id);
     ratings.push('');
@@ -105,7 +106,7 @@ function searchJSONByTitle(title) {
     //var results = JSON.parse(JSON.stringify(response));
     var results;
     $.each(response, function(item) {
-      if(title == item.Title) {
+      if(title.toLowerCase() == item.Title.toLowerCase()) {
         results.push(item);
       }
     });
