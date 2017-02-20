@@ -48,8 +48,8 @@
       </div>
       <div class="row"><br><br>
         <!-- Search bar -->
-          <input id="searchBar" type="text" name="searchBar"> 
-          <button type="button" onclick="displayResults()">Search</button>    
+        <input id="searchBar" type="text" name="searchBar"></input>
+        <button type="button" onclick="searchJSONBySearchBar()">Search</button>
       </div>
       <div id="search-results">
         <!-- Insert results into here using Javascript -->
@@ -60,24 +60,5 @@
         </div>
       </div>
     </div>
-    <!-- Script for search -->
-    <script src="main.js" type="text/javascript"></script>
-    <script>
-      function displayResults(){
-        var xhttp;
-        //initiate the http request based on browser version
-        if(window.XMLHttpRequest) {
-          xhttp = new XMLHttpRequest();
-        } else {
-          xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xhttp.onreadystatechange = function() {
-          var toSearch = document.getElementById("searchBar").value; //grabs the text from search bar
-          searchOMDBByTitle(toSearch);
-        };
-        xhttp.open("GET", "Movie_Database.json", true);
-        xhttp.send(); //displays data on page
-      }
-    </script>
   </body>
 </html>

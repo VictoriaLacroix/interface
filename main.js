@@ -91,35 +91,44 @@ function fetchMovieFromOMDB(id) {
   });
 }
 
+function searchJSONBySearchBar() {
+  searchJSONByTitle(document.getElementById('searchBar').value);
+}
+
 /*
  * Searches the OMDB API for movies matching/containing the given title, then
  * executes the given callback function with the result.
  */
-function searchOMDBByTitle(title) {
+function searchJSONByTitle(title) {
   // TODO include more than just movies for the searches?
-  $.getJSON('file:///C:/Users/Brandon/Desktop/HCI_Website/movie_Database.json',
-      function(response) {
-    var results = JSON.parse(JSON.stringify(response));
-    
-    var output = "";
-    $.each(response, function(arr) {
-      results.push(createMovie(response));
-      var current = response[arr].Title;
-      if (!current.search(title)){ //if search matches a title of movie in the database
-        output = output + "      " + JSON.stringify(response[arr]); //append all results
-        document.getElementById("search-results").innerHTML = output; //insert results in div
-        var newMovie = new movie(response[arr].imdbID,response[arr].Title,response[arr].Year,response[arr].Poster,response[arr].Genre,response[arr].Plot,response[arr].Runtime,response[arr].Status);
-        console.log(newMovie);
+  $.getJSON('Movie_Database.json', function(response) {
+    //var results = JSON.parse(JSON.stringify(response));
+    var results;
+    $.each(response, function(item) {
+      if(title == item.Title) {
+        results.push(item);
       }
-      return output;
     });
+    // create results div
+    document.getElementById("searchResults").innerHTML =
+        generateSearchDiv(results);
   });
+}
+
+function generateSearchDiv(arr) {
+  var result;
+  result += '<div id="results">';
+  $.each(arr, function(movie) {
+    result += generateSearchMovieDiv(movie);
+  });
+  result += '</div>';
+  return result;
 }
 
 /**
  * Creates a <div> tag based on the given movie's poster, title and year.
  */
-function generateSearchResultDiv(movie) {
+function generateSearchMovieDiv(movie) {
   var result = '<div class=".col-md-2" style="text-align: center">';
   result    += '<img src="' + movie.poster + '" alt="' + movie.title + '">';
   result    += '<p>' + movie.title + '</p>';
