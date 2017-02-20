@@ -93,7 +93,7 @@ function fetchMovieFromOMDB(id) {
 }
 
 function searchJSONBySearchBar() {
-  searchJSONByTitle(document.getElementById('searchBar').value);
+  searchJSONByTitle($('input[id=searchBar]').val());
 }
 
 /*
