@@ -204,8 +204,8 @@ function arrayIndexOf(arr, obj) {
 function getMovieById(id) {
   return movies[arrayIndexOf(movieIDs, id)];
 }
-function stringify (x) {
+
+function stringify(x) {
     console.log(Object.prototype.toString.call(x));
 }
-
 
