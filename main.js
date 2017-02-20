@@ -102,9 +102,9 @@ function searchJSONBySearchBar() {
  */
 function searchJSONByTitle(title) {
   $.getJSON('Movie_Database.json', function(response) {
-    console.log('response: ' + response);
     var results;
-    $.each($.parseJSON(response), function(item) {
+    $.each(response, function(item) {
+      console.log(JSON.stringify(item));
       if(title.toLowerCase() == item.Title.toLowerCase()) {
         results.push(item);
       }
