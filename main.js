@@ -132,7 +132,7 @@ function generateSearchMovieDiv(movie) {
   var result = '<div class=".col-md-2" style="text-align: center">';
   result    += '<img src="' + movie.poster + '" alt="' + movie.title + '">';
   result    += '<p>' + movie.title + '</p>';
-  result    += '<button onclick="addMovieById(' + movie.id;
+  result    += '<button type="button" onclick="addMovieById(' + movie.id;
                + ')">Add to List</button>';
   result    += '</div>';
   return result;
