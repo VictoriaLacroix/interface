@@ -49,7 +49,14 @@
       <div class="row"><br><br>
         <!-- Search bar -->
         <input id="searchBar" type="text" name="searchBar"></input>
-        <button type="button" onclick="searchJSONBySearchBar()">Search</button>
+        <button id="searchButton" type="button" onclick="searchJSONBySearchBar()">Search</button>
+        <script>
+          $("#searchBar").keyup(function(event){
+             if(event.keyCode == 13){
+                $("#searchButton").click();
+              }
+          });
+        </script>
       </div>
       <div id="searchResults">
         <!-- Insert results into here using Javascript -->
