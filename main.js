@@ -117,7 +117,7 @@ function searchJSONByTitle(title) {
 
 function generateSearchDiv(arr) {
   var result;
-  result += '<div id="results">';
+  result += '<div id="searchResults">';
   $.each(arr, function(i, movie) {
     result += generateSearchMovieDiv(movie);
   });
