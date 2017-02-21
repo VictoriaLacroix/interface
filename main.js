@@ -48,7 +48,7 @@ function loadFilms() {
   movieIDs = Cookies.get('movieIDs');
   ratings = Cookies.get('ratings');
   statuses = Cookies.get('statuses');
-  $.each(movieIDs, function(id) {
+  $.each(movieIDs, function(i, id) {
     movies.push = fetchMovieFromOMDB(id);
   });
 }
@@ -104,9 +104,9 @@ function searchJSONByTitle(title) {
   $.get('Movie_Database.json', function(response) {
     console.log(response);
     var results;
-    $.each(response, function(item) {
-      if(title.toLowerCase() == item.Title.toLowerCase()) {
-        results.push(item);
+    $.each(response, function(idx, movie) {
+      if(title.toLowerCase() == movie.Title.toLowerCase()) {
+        results.push(movie);
       }
     });
     // create results div
@@ -118,7 +118,7 @@ function searchJSONByTitle(title) {
 function generateSearchDiv(arr) {
   var result;
   result += '<div id="results">';
-  $.each(arr, function(movie) {
+  $.each(arr, function(i, movie) {
     result += generateSearchMovieDiv(movie);
   });
   result += '</div>';
