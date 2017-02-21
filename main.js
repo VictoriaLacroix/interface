@@ -104,7 +104,7 @@ function searchJSONByTitle(title) {
   $.get('Movie_Database.json', function(response) {
     console.log(response);
     var results;
-    $.each(JSON.parse(response), function(item) {
+    $.each(response, function(item) {
       if(title.toLowerCase() == item.Title.toLowerCase()) {
         results.push(item);
       }
