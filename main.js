@@ -23,7 +23,7 @@ var expandedMovie = '';
 /*
  * Movie object for page use.
  */
-function movie(id, title, year, poster, genre, plot, runtime, status) {
+function movie(id, title, year, poster, genre, plot, runtime) {
   this.id = id;
   this.title = title;
   this.year = year;
@@ -31,7 +31,7 @@ function movie(id, title, year, poster, genre, plot, runtime, status) {
   this.genre = genre;
   this.plot = plot;
   this.runtime = runtime;
-  this.status = status;
+  this.state = "Unwatched";
 }
 
 /*
@@ -39,7 +39,7 @@ function movie(id, title, year, poster, genre, plot, runtime, status) {
  */
 function createMovie(obj) {
   return new movie(obj.imdbID, obj.Title, obj.Year, obj.Poster, obj.Genre,
-    obj.Plot, obj.Runtime, obj.Status);
+    obj.Plot, obj.Runtime);
 }
 
 // -- Cookie stuff --
@@ -53,7 +53,7 @@ function loadFilms() {
   });
 }
 
-function addMovieByID(id) {
+function addMovieById(id) {
   // TODO add a notification
   if(!arrayContains(arr, obj)) {
     movieIDs.push(id);
@@ -65,7 +65,7 @@ function addMovieByID(id) {
   }
 }
 
-function setRatingByID(id, rating) {
+function setRatingById(id, rating) {
   var index = arrayIndexOf(movieIDs, id);
   if(index >= 0) {
     ratings[index] = rating;
@@ -76,7 +76,7 @@ function setRatingByID(id, rating) {
 /*
  * Sets the status of a movie to either "watched", "unwatched", or "rated".
  */
-function setStatusByID(id, stat) {
+function setStatusById(id, stat) {
   var index = arrayIndexOf(movieIDs, id);
   if(index >= 0) {
     statuses[index] = stat;
@@ -102,7 +102,6 @@ function searchJSONBySearchBar() {
  */
 function searchJSONByTitle(title) {
   $.get('Movie_Database.json', function(response) {
-    console.log(response);
     var results = [];
     $.each(response, function(idx, movie) {
       if(title.toLowerCase() == movie.Title.toLowerCase()) {
