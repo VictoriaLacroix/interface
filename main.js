@@ -103,8 +103,9 @@ function searchJSONBySearchBar() {
 function searchJSONByTitle(title) {
   $.get('Movie_Database.json', function(response) {
     var results = [];
-    $.each(response, function(idx, movie) {
-      if(title.toLowerCase() == movie.Title.toLowerCase()) {
+    $.each(JSON.parse(response), function(idx, movie) {
+      var current = movie.Title.toLowerCase();
+      if(!current.search(title.toLowerCase())) {
         results.push(createMovie(movie));
       }
     });
@@ -131,8 +132,7 @@ function generateSearchMovieDiv(movie) {
   var result = '<div class=".col-md-2" style="text-align: center">';
   result    += '<img src="' + movie.poster + '" alt="' + movie.title + '">';
   result    += '<p>' + movie.title + '</p>';
-  result    += '<button type="button" onclick="addMovieById(' + movie.id;
-               + ')">Add to List</button>';
+  result    += '<button type="button" onclick="addMovieById(' + movie.id + ')">Add to List</button>';
   result    += '</div>';
   return result;
 }
