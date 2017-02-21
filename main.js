@@ -106,7 +106,7 @@ function searchJSONByTitle(title) {
     var results = [];
     $.each(response, function(idx, movie) {
       if(title.toLowerCase() == movie.Title.toLowerCase()) {
-        results.push(movie);
+        results.push(createMovie(movie));
       }
     });
     // create results div
