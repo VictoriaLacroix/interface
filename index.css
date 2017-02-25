@@ -1,0 +1,128 @@
+body{
+
+	background-color: black !important;
+}
+
+.nav-tabs{
+  /*background-color:#161616;*/
+}
+.tab-content > #home{
+    
+    background: #009900; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#1aff1a, #006600); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#1aff1a, #006600); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#1aff1a, #006600); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#1aff1a, black); /* Standard syntax (must be last) */
+    width: 100%;
+    height: 100vh;
+    color:#fff;
+    padding:5px
+
+}
+
+.tab-content > #menu1{
+    
+    background: #0000e6; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#0000e6, #006600); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#0000e6, #006600); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#0000e6, #006600); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#0000e6, black); /* Standard syntax (must be last) */
+    width: 100%;
+    height: 100vh;
+    color:#fff;
+    padding:5px
+
+}
+
+.tab-content > #menu2{
+    
+    background: #e6b800; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#e6b800, #006600); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#e6b800, #006600); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#e6b800, #006600); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#e6b800, black); /* Standard syntax (must be last) */
+    width: 100%;
+    height: 100vh;
+    color:#fff;
+    padding:5px
+
+}
+
+
+.nav-tabs > li > a{
+  border: medium none;
+  border-color: black;
+  margin : 0 !important;
+
+  -webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: -3;
+
+
+}
+.nav-tabs > li > a:hover{
+  	background-color: #303136 !important;
+    border: medium none;
+    border-radius: 0;
+    color:#fff;
+}
+
+.nav-tabs > li.active > a{
+  	background-color: #1aff1a !important;
+    border: medium none;
+    border-radius: 0;
+    color:white !important;
+    /*color:#fff;*/
+}
+
+.nav-tabs > li.active > a[href="#home"]{
+  	background-color: #1aff1a !important;
+    border: medium none;
+    border-radius: 0;
+    color:white !important;
+    /*color:#fff;*/
+}
+
+.nav-tabs > li.active > a[href="#menu1"]{
+  	background-color: #0000e6 !important;
+    border: medium none;
+    border-radius: 0;
+    color:white !important;
+    /*color:#fff;*/
+}
+
+
+.nav-tabs > li.active > a[href="#menu2"]{
+  	background-color: #e6b800 !important;
+    border: medium none;
+    border-radius: 0;
+    color:white !important;
+    /*color:#fff;*/
+}
+
+
+.movies p {
+    text-align: center;
+}
+.movie-details {
+    margin-top: 20px;
+    background-color: #333;
+    padding: 1em 0;
+
+}
+    .movie-details h3, .movie-details h4, .movie-details p {
+        color: #eee;
+    }
+.movie-details .triangle {
+    margin: -25px auto 0 auto;
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent; 
+    border-right: 10px solid transparent; 
+    border-bottom: 13px solid #333;
+}
+.movie-details iframe {
+    width: 100%;
+    border: 0;
+    height: 200px;
+}
