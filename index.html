@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,9 +36,8 @@
 
     <style type="text/css">
       body {
-                padding-top: 50px; /* Whatever the height of your navbar is; the
-                                         default is 50px */
-            }
+        padding-top: 50px;
+      }
     </style>
   </head>
 
@@ -61,27 +59,26 @@
           <form class="navbar-form navbar-right">
             <div class="form-group">
               <!-- Search bar -->
-              <input id="searchBar" type="text" name="searchBar"> 
-              <button type="button"  class="btn btn-default" onclick="displayResults()">Search</button>  
-               <div id="search-results">
-            <!-- Insert results into here using Javascript -->
-          </div>
+              <input id="searchBar" type="text" name="searchBar">
+              <button type="button"  class="btn btn-default" onclick="searchJSONBySearchBar()">Search</button>
+              <div id="search-results">
+                <!-- Insert results into here using Javascript -->
+              </div>
             </div>
           </form>
-        </div><!--/.navbar-collapse -->
+        </div>
       </div>
     </nav>
 
-
     <!--Lower Nav Bars-->
     <ul class="nav nav-tabs">
-      <li class="active" width="100px"><a data-toggle="tab" href="#home">To Watch</a></li>
-      <li><a data-toggle="tab" href="#menu1">Watched</a></li>
-      <li><a data-toggle="tab" href="#menu2">Rated</a></li>
+      <li class="active" width="100px"><a data-toggle="tab" href="#not-watched">To Watch</a></li>
+      <li><a data-toggle="tab" href="#watched">Watched</a></li>
+      <li><a data-toggle="tab" href="#rated">Rated</a></li>
     </ul>
 
     <div class="tab-content">
-      <div id="home" class="tab-pane fade in active">
+      <div id="not-watched" class="tab-pane fade in active">
         <div class="container">
           <h3 class="page-header">To Watch</h3>
           <div class="row">
@@ -90,236 +87,18 @@
               <a class="movie-link" data-link="movies/moana.html" data-offset="offset2" href="#movie-details">
                 <img class="img-responsive" src="images/moana.jpg">
               </a>
-
-                <br/>
-                <p>
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                </p>
-                <p>
-                  <img src="images/favicon-eye-grey.ico">
-                  <img src="images/favicon-trash.ico">
-                </p>
-            </center>
-          </div>
-          <div class="col-md-2">
-            <center>
-            <img class="img-responsive" src="images/kiki.jpg">
               <br/>
-                <p>
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                </p>
-                <p>
-                  <img src="images/favicon-eye-grey.ico">
-                  <img src="images/favicon-trash.ico">
-                </p>
-            </center>
-          </div>
-          <div class="col-md-2">
-              <center>
-                <img class="img-responsive" src="images/batman.jpg">
-                <br/>
-                  <p>
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                </p>
-                <p>
-                  <img src="images/favicon-eye-grey.ico">
-                  <img src="images/favicon-trash.ico">
-                </p>
-
-              </center>
-          </div>
-          <div class="col-md-2">
-              <center>
-                <img class="img-responsive" src="images/inside.jpg">
-                <br/>
-                  <p>
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                </p>
-                <p>
-                  <img src="images/favicon-eye-grey.ico">
-                  <img src="images/favicon-trash.ico">
-                </p>
-
-              </center>
-          </div>
-          <div class="col-md-2">
-              <center>
-                <img class="img-responsive" src="images/hidden.jpg">
-                <br/>
-                  <p>
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                </p>
-                <p>
-                  <img src="images/favicon-eye-grey.ico">
-                  <img src="images/favicon-trash.ico">
-                </p>
-
-              </center>
-          </div>
-          <div class="col-md-2">
-              <center>
-                <img class="img-responsive" src="images/beauty.jpg">
-                <br/>
-                  <p>
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                </p>
-                <p>
-                  <img src="images/favicon-eye-grey.ico">
-                  <img src="images/favicon-trash.ico">
-                </p>
-
-              </center>
-          </div>
-      </div>
-
-      <div class="row">
-          <div class="col-md-2">
-            <center>
-              <img class="img-responsive" src="images/moana.jpg">
-                <br/>
-                <p>
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                </p>
-                <p>
-                  <img src="images/favicon-eye-grey.ico">
-                  <img src="images/favicon-trash.ico">
-                </p>
-            </center>
-          </div>
-          <div class="col-md-2">
-            <center>
-            <img class="img-responsive" src="images/kiki.jpg">
-              <br/>
-                <p>
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                </p>
-                <p>
-                  <img src="images/favicon-eye-grey.ico">
-                  <img src="images/favicon-trash.ico">
-                </p>
-            </center>
-          </div>
-          <div class="col-md-2">
-              <center>
-                <img class="img-responsive" src="images/batman.jpg">
-                <br/>
-                  <p>
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                </p>
-                <p>
-                  <img src="images/favicon-eye-grey.ico">
-                  <img src="images/favicon-trash.ico">
-                </p>
-
-              </center>
-          </div>
-          <div class="col-md-2">
-              <center>
-                <img class="img-responsive" src="images/inside.jpg">
-                <br/>
-                  <p>
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                </p>
-                <p>
-                  <img src="images/favicon-eye-grey.ico">
-                  <img src="images/favicon-trash.ico">
-                </p>
-
-              </center>
-          </div>
-          <div class="col-md-2">
-              <center>
-                <img class="img-responsive" src="images/hidden.jpg">
-                <br/>
-                  <p>
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                </p>
-                <p>
-                  <img src="images/favicon-eye-grey.ico">
-                  <img src="images/favicon-trash.ico">
-                </p>
-
-              </center>
-          </div>
-          <div class="col-md-2">
-              <center>
-                <img class="img-responsive" src="images/beauty.jpg">
-                <br/>
-                  <p>
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                </p>
-                <p>
-                  <img src="images/favicon-eye-grey.ico">
-                  <img src="images/favicon-trash.ico">
-                </p>
-
-              </center>
-          </div>
-      </div>
-      <div class="row">
-          <div class="col-md-2">
-            <center>
-              <img class="img-responsive" src="images/moana.jpg">
-                <br/>
-                <p>
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                  <img src="images/favicon-star-o.ico">
-                </p>
-                <p>
-                  <img src="images/favicon-eye-grey.ico">
-                  <img src="images/favicon-trash.ico">
-                </p>
+              <p>
+                <img src="images/favicon-star-o.ico">
+                <img src="images/favicon-star-o.ico">
+                <img src="images/favicon-star-o.ico">
+                <img src="images/favicon-star-o.ico">
+                <img src="images/favicon-star-o.ico">
+              </p>
+              <p>
+                <img src="images/favicon-eye-grey.ico">
+                <img src="images/favicon-trash.ico">
+              </p>
             </center>
           </div>
           <div class="col-md-2">
@@ -414,7 +193,7 @@
       </div>
     </div>
       </div>
-      <div id="menu1" class="tab-pane fade">
+      <div id="watched" class="tab-pane fade">
         <div class="container">
           <h3 class="page-header">Watched</h3>
           <div class="row">
@@ -527,7 +306,7 @@
       </div>
       </div>
     </div>
-      <div id="menu2" class="tab-pane fade">
+      <div id="rated" class="tab-pane fade">
         <div class="container">
           <h3 class="page-header">Rated</h3>
           <div class="row">
