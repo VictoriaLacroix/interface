@@ -15,7 +15,7 @@ window.onload = loadFilms;
 
 // -- Globals --
 var movieIDs = [];
-var movies = [];
+var movies = []; // do not cookie this!
 var ratings = [];
 var statuses = [];
 var expandedMovie = '';
@@ -43,7 +43,7 @@ function createMovie(obj) {
 }
 
 // -- Cookie stuff --
-//
+
 function loadFilms() {
   movieIDs = Cookies.get('movieIDs');
   ratings = Cookies.get('ratings');
@@ -51,11 +51,12 @@ function loadFilms() {
   $.each(movieIDs, function(i, id) {
     movies.push = fetchMovieFromOMDB(id);
   });
+  console.log("Movies Loaded.");
 }
 
 function addMovieById(id) {
   // TODO add a notification
-  if(!arrayContains(arr, obj)) {
+  if(!arrayContains(movieIDs, id)) {
     movieIDs.push(id);
     ratings.push('');
     movies.push(fetchMovieFromOMDB(id));
@@ -138,11 +139,23 @@ function generateSearchMovieDiv(movie) {
 }
 
 function generateClosedMovieDiv(movie) {
-  var result = '<div id="small-' + movie.id
-             + '" onclick="expandMovieDiv(' + movie.id
-             + ')" class=".col-md-3" style="text-align: center">';
-  result    += '<img src="' + movie.poster + '" alt="' + movie.title + '">';
-  result    += '</div>';
+  '<div class="col-md-2">'
+  '<center>'
+  '<img class="img-responsive" src="images/hidden.jpg">'
+  '<br/>'
+  '<p>'
+  '<img src="images/favicon-star-o.ico">'
+  '<img src="images/favicon-star-o.ico">'
+  '<img src="images/favicon-star-o.ico">'
+  '<img src="images/favicon-star-o.ico">'
+  '<img src="images/favicon-star-o.ico">'
+  '</p>'
+  '<p>'
+  '<img src="images/favicon-eye-grey.ico">'
+  '<img src="images/favicon-trash.ico">'
+  '</p>'
+  '</center>'
+  '</div>'
   return result;
 }
 
