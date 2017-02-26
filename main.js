@@ -11,40 +11,16 @@
  * js-cookie: https://github.com/js-cookie/js-cookie.git
  */
 
-window.onload = loadFilms;
-
-// -- Globals --
-var movieIDs = [];
-var movies = []; // do not cookie this!
-var ratings = [];
-var statuses = [];
-var expandedMovie = '';
-
-/*
- * Movie object for page use.
- */
-function movie(id, title, year, poster, genre, plot, runtime) {
-  this.id = id;
-  this.title = title;
-  this.year = year;
-  this.poster = poster;
-  this.genre = genre;
-  this.plot = plot;
-  this.runtime = runtime;
-  this.state = "Unwatched";
-}
-
-/*
- * Creates a movie object from the given OMDB JSON object.
- */
-function createMovie(obj) {
-  return new movie(obj.imdbID, obj.Title, obj.Year, obj.Poster, obj.Genre,
-    obj.Plot, obj.Runtime);
-}
-
 // -- Cookie stuff --
 
 function loadFilms() {
+  // Globals
+  movieIDs = new Array();
+  movies = new Array(); // do not cookie this!
+  ratings = new Array();
+  statuses = new Array();
+  expandedMovie = '';
+
   movieIDs = Cookies.get('movieIDs');
   ratings = Cookies.get('ratings');
   statuses = Cookies.get('statuses');
@@ -83,6 +59,27 @@ function setStatusById(id, stat) {
     statuses[index] = stat;
     Cookies.set('statuses', statuses);
   }
+}
+
+/*
+ * Movie object for page use.
+ */
+function movie(id, title, year, poster, genre, plot, runtime) {
+  this.id = id;
+  this.title = title;
+  this.year = year;
+  this.poster = poster;
+  this.genre = genre;
+  this.plot = plot;
+  this.runtime = runtime;
+}
+
+/*
+ * Creates a movie object from the given OMDB JSON object.
+ */
+function createMovie(obj) {
+  return new movie(obj.imdbID, obj.Title, obj.Year, obj.Poster, obj.Genre,
+    obj.Plot, obj.Runtime);
 }
 
 // -- OMDB stuff --
@@ -138,6 +135,7 @@ function generateSearchMovieDiv(movie) {
   return result;
 }
 
+/*
 function generateClosedMovieDiv(movie) {
   '<div class="col-md-2">'
   '<center>'
@@ -158,6 +156,7 @@ function generateClosedMovieDiv(movie) {
   '</div>'
   return result;
 }
+*/
 
 function generateMovieInfoDiv(movie, rating) {
   var result = '<div id="big-' + movie.id
@@ -204,6 +203,9 @@ function shrinkMovieDiv() {
 
 // Actually faster than most browser implementations
 function arrayContains(arr, obj) {
+  if(arr == null) {
+    return false;
+  }
   for(var i = 0; i < arr.length; i++) {
     if(arr[i] == obj) {
       return true;
