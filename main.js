@@ -86,106 +86,131 @@ function displayToWatch(){
   var str = document.cookie;
   var result = str.split("; ");
   var res;
+  var movie1isRated = false;
+  var movie2isRated = false;
+  var movie3isRated = false;
+  var movie4isRated = false;
   console.log(result);
   for(var i=0;i<result.length;i++){
+    //Movie 1
     if(result[i] == 'starRating1=1'){
+      movie1isRated = true;
       $('#el').rating('update', 1);
       $('#rated-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZGEzZTExMDEtNjg4OC00NjQxLTk5NTUtNjRkNjA3MmYwZjg1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"><p>Star Wars Episode IV: A New Hope</p><br/><br/>');      
     }
     if(result[i] == 'starRating1=2'){
+    movie1isRated = true;
       $('#el').rating('update', 2);
       $('#rated-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZGEzZTExMDEtNjg4OC00NjQxLTk5NTUtNjRkNjA3MmYwZjg1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"><p>Star Wars Episode IV: A New Hope</p><br/><br/>');      
     
     }
     if(result[i] == 'starRating1=3'){
+      movie1isRated = true;
       $('#el').rating('update', 3);
       $('#rated-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZGEzZTExMDEtNjg4OC00NjQxLTk5NTUtNjRkNjA3MmYwZjg1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"><p>Star Wars Episode IV: A New Hope</p><br/><br/>');      
     
     }
     if(result[i] == 'starRating1=4'){
+      movie1isRated = true;
       $('#el').rating('update', 4);
       $('#rated-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZGEzZTExMDEtNjg4OC00NjQxLTk5NTUtNjRkNjA3MmYwZjg1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"><p>Star Wars Episode IV: A New Hope</p><br/><br/>');      
     
     }
     if(result[i] == 'starRating1=5'){
+      movie1isRated = true;
       $('#el').rating('update', 5);
       $('#rated-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZGEzZTExMDEtNjg4OC00NjQxLTk5NTUtNjRkNjA3MmYwZjg1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"><p>Star Wars Episode IV: A New Hope</p><br/><br/>');      
     
     }
     //movie 2
     if(result[i] == 'starRating2=1'){
+      movie2isRated = true;
       $('#el2').rating('update', 1);
       $('#rated-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZTJiNGM2NjItNDRiYy00ZjY0LTgwNTItZDBmZGRlODQ4YThkL2ltYWdlXkEyXkFqcGdeQXVyMjY5ODI4NDk@._V1_SX300.jpg"><p>Split</p><br/><br/>');      
 
     }
     if(result[i] == 'starRating2=2'){
+      movie2isRated = true;
       $('#el2').rating('update', 2);
       $('#rated-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZTJiNGM2NjItNDRiYy00ZjY0LTgwNTItZDBmZGRlODQ4YThkL2ltYWdlXkEyXkFqcGdeQXVyMjY5ODI4NDk@._V1_SX300.jpg"><p>Split</p><br/><br/>');      
 
       }
     if(result[i] == 'starRating2=3'){
+      movie2isRated = true;
       $('#el2').rating('update', 3);
       $('#rated-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZTJiNGM2NjItNDRiYy00ZjY0LTgwNTItZDBmZGRlODQ4YThkL2ltYWdlXkEyXkFqcGdeQXVyMjY5ODI4NDk@._V1_SX300.jpg"><p>Split</p><br/><br/>');      
 
       }
     if(result[i] == 'starRating2=4'){
+      movie2isRated = true;
       $('#el2').rating('update', 4);
       $('#rated-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZTJiNGM2NjItNDRiYy00ZjY0LTgwNTItZDBmZGRlODQ4YThkL2ltYWdlXkEyXkFqcGdeQXVyMjY5ODI4NDk@._V1_SX300.jpg"><p>Split</p><br/><br/>');      
 
       }
     if(result[i] == 'starRating2=5'){
+      movie2isRated = true;
       $('#el2').rating('update', 5);
       $('#rated-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZTJiNGM2NjItNDRiYy00ZjY0LTgwNTItZDBmZGRlODQ4YThkL2ltYWdlXkEyXkFqcGdeQXVyMjY5ODI4NDk@._V1_SX300.jpg"><p>Split</p><br/><br/>');      
 
       }
     //movie 3
     if(result[i] == 'starRating3=1'){
+      movie3isRated = true;
       $('#el3').rating('update', 1);
       $('#rated-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BNzQxNTIyODAxMV5BMl5BanBnXkFtZTgwNzQyMDA3OTE@._V1_SX300.jpg"><p>Moonlight</p><br/><br/>');      
     
     }
     if(result[i] == 'starRating3=2'){
+      movie3isRated = true;
       $('#el3').rating('update', 2);
       $('#rated-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BNzQxNTIyODAxMV5BMl5BanBnXkFtZTgwNzQyMDA3OTE@._V1_SX300.jpg"><p>Moonlight</p><br/><br/>');      
     
     }
     if(result[i] == 'starRating3=3'){
+      movie3isRated = true;
       $('#el3').rating('update', 3);
       $('#rated-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BNzQxNTIyODAxMV5BMl5BanBnXkFtZTgwNzQyMDA3OTE@._V1_SX300.jpg"><p>Moonlight</p><br/><br/>');      
     
     }
     if(result[i] == 'starRating3=4'){
+      movie3isRated = true;
       $('#el3').rating('update', 4);
       $('#rated-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BNzQxNTIyODAxMV5BMl5BanBnXkFtZTgwNzQyMDA3OTE@._V1_SX300.jpg"><p>Moonlight</p><br/><br/>');      
     
     }
     if(result[i] == 'starRating3=5'){
+      movie3isRated = true;
       $('#el3').rating('update', 5);
       $('#rated-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BNzQxNTIyODAxMV5BMl5BanBnXkFtZTgwNzQyMDA3OTE@._V1_SX300.jpg"><p>Moonlight</p><br/><br/>');      
     
     }
     //movie 4
     if(result[i] == 'starRating4=1'){
+      movie4isRated = true;
       $('#el4').rating('update', 1);
       $('#rated-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTExMzU0ODcxNDheQTJeQWpwZ15BbWU4MDE1OTI4MzAy._V1_SX300.jpg"><p>Arrival</p><br/><br/>');      
     
     }
     if(result[i] == 'starRating4=2'){
+      movie4isRated = true;
       $('#el4').rating('update', 2);
       $('#rated-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTExMzU0ODcxNDheQTJeQWpwZ15BbWU4MDE1OTI4MzAy._V1_SX300.jpg"><p>Arrival</p><br/><br/>');      
     
     }
     if(result[i] == 'starRating4=3'){
+      movie4isRated = true;
       $('#el4').rating('update', 3);
       $('#rated-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTExMzU0ODcxNDheQTJeQWpwZ15BbWU4MDE1OTI4MzAy._V1_SX300.jpg"><p>Arrival</p><br/><br/>');      
     
     }
     if(result[i] == 'starRating4=4'){
+      movie4isRated = true;
       $('#el4').rating('update', 4);
       $('#rated-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTExMzU0ODcxNDheQTJeQWpwZ15BbWU4MDE1OTI4MzAy._V1_SX300.jpg"><p>Arrival</p><br/><br/>');      
     
     }
     if(result[i] == 'starRating4=5'){
+      movie4isRated = true;
       $('#el4').rating('update', 5);
       $('#rated-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTExMzU0ODcxNDheQTJeQWpwZ15BbWU4MDE1OTI4MzAy._V1_SX300.jpg"><p>Arrival</p><br/><br/>');      
     
@@ -193,31 +218,62 @@ function displayToWatch(){
   
     //To Watch tab:
     if(result[i] == 'StarWars=toWatch'){
-      $('#not-watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZGEzZTExMDEtNjg4OC00NjQxLTk5NTUtNjRkNjA3MmYwZjg1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"><p>Star Wars Episode IV: A New Hope</p><button class="btn" onclick="document.cookie=\'StarWars=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
+      if(movie1isRated){
+      }
+      else{
+        $('#not-watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZGEzZTExMDEtNjg4OC00NjQxLTk5NTUtNjRkNjA3MmYwZjg1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"><p>Star Wars Episode IV: A New Hope</p><button class="btn" onclick="document.cookie=\'StarWars=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
+      }
     }  
     if(result[i] == 'Split=toWatch'){
-      $('#not-watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZTJiNGM2NjItNDRiYy00ZjY0LTgwNTItZDBmZGRlODQ4YThkL2ltYWdlXkEyXkFqcGdeQXVyMjY5ODI4NDk@._V1_SX300.jpg"><p>Split</p><button class="btn" onclick="document.cookie=\'Split=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
+      if(movie2isRated){
+      }
+      else{
+        $('#not-watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZTJiNGM2NjItNDRiYy00ZjY0LTgwNTItZDBmZGRlODQ4YThkL2ltYWdlXkEyXkFqcGdeQXVyMjY5ODI4NDk@._V1_SX300.jpg"><p>Split</p><button class="btn" onclick="document.cookie=\'Split=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
+      }
     }  
     if(result[i] == 'Moonlight=toWatch'){
-      $('#not-watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BNzQxNTIyODAxMV5BMl5BanBnXkFtZTgwNzQyMDA3OTE@._V1_SX300.jpg"><p>Moonlight</p><button class="btn" onclick="document.cookie=\'Moonlight=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
+      if(movie3isRated){
+      }
+      else{
+        $('#not-watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BNzQxNTIyODAxMV5BMl5BanBnXkFtZTgwNzQyMDA3OTE@._V1_SX300.jpg"><p>Moonlight</p><button class="btn" onclick="document.cookie=\'Moonlight=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
+      }
     }  
     if(result[i] == 'Arrival=toWatch'){
-      $('#not-watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTExMzU0ODcxNDheQTJeQWpwZ15BbWU4MDE1OTI4MzAy._V1_SX300.jpg"><p>Arrival</p><button class="btn" onclick="document.cookie=\'Arrival=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
+      if(movie4isRated){
+      }
+      else{
+        $('#not-watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTExMzU0ODcxNDheQTJeQWpwZ15BbWU4MDE1OTI4MzAy._V1_SX300.jpg"><p>Arrival</p><button class="btn" onclick="document.cookie=\'Arrival=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
+      }
     }
     //Watched tab:
     if(result[i] == 'StarWars=watched'){
-      $('#watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZGEzZTExMDEtNjg4OC00NjQxLTk5NTUtNjRkNjA3MmYwZjg1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"><p>Star Wars Episode IV: A New Hope</p><button class="btn" onclick="document.cookie=\'StarWars=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
+      if(movie1isRated){
+      }
+      else{
+        $('#watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZGEzZTExMDEtNjg4OC00NjQxLTk5NTUtNjRkNjA3MmYwZjg1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"><p>Star Wars Episode IV: A New Hope</p><button class="btn" onclick="document.cookie=\'StarWars=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
+      }
     }  
     if(result[i] == 'Split=watched'){
-      $('#watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZTJiNGM2NjItNDRiYy00ZjY0LTgwNTItZDBmZGRlODQ4YThkL2ltYWdlXkEyXkFqcGdeQXVyMjY5ODI4NDk@._V1_SX300.jpg"><p>Split</p><button class="btn" onclick="document.cookie=\'Split=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
+      if(movie2isRated){
+      }
+      else{
+        $('#watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZTJiNGM2NjItNDRiYy00ZjY0LTgwNTItZDBmZGRlODQ4YThkL2ltYWdlXkEyXkFqcGdeQXVyMjY5ODI4NDk@._V1_SX300.jpg"><p>Split</p><button class="btn" onclick="document.cookie=\'Split=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
+      }
     }  
     if(result[i] == 'Moonlight=watched'){
-      $('#watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BNzQxNTIyODAxMV5BMl5BanBnXkFtZTgwNzQyMDA3OTE@._V1_SX300.jpg"><p>Moonlight</p><button class="btn" onclick="document.cookie=\'Moonlight=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
+      if(movie3isRated){
+      }
+      else{
+        $('#watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BNzQxNTIyODAxMV5BMl5BanBnXkFtZTgwNzQyMDA3OTE@._V1_SX300.jpg"><p>Moonlight</p><button class="btn" onclick="document.cookie=\'Moonlight=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
+      }
     }  
     if(result[i] == 'Arrival=watched'){
-      $('#watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTExMzU0ODcxNDheQTJeQWpwZ15BbWU4MDE1OTI4MzAy._V1_SX300.jpg"><p>Arrival</p><button class="btn" onclick="document.cookie=\'Arrival=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
-    }
-    
+      if(movie4isRated){
+      }
+      else{
+        $('#watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTExMzU0ODcxNDheQTJeQWpwZ15BbWU4MDE1OTI4MzAy._V1_SX300.jpg"><p>Arrival</p><button class="btn" onclick="document.cookie=\'Arrival=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
+      }
+    }    
   }
   
   return res;
