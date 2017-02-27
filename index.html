@@ -16,10 +16,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+    <link href="star-rating.css" media="all" rel="stylesheet" type="text/css" />
+ 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
+    <script src="themes/krajee-svg/theme.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
@@ -29,7 +30,7 @@
     <script src="jquery.js"></script>
     <script src="js-cookie.js"></script>
     <script src="rating.js"></script>
-    
+    <script src="star-rating.js" type="text/javascript"></script>
      <!-- Main script file -->
     <script src="main.js"></script>
 
@@ -77,14 +78,8 @@
             <p class="title">Star Wars Episode IV: A New Hope</p>
             <button class="btn" onclick="document.cookie='StarWars=toWatch;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload()">Add to my 'To Watch' List</button>
             <button class="btn" onclick="document.cookie='StarWars=watched;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload()">Add to my 'Watched' List</button>
-            <div id="el" style="width:24px;"></div>
-            <button class="btn" onclick="document.cookie='StarWars=rated;expires=Wed, 01 Jan 2020 00:00:00 UTC;';location.reload()">Confirm Rating</button>           
-            
-            
-            
-            
-            
-            
+            <input id="el" name="input-name" type="number" class="rating" min=0 max=5 step=0.5 data-size="xs" data-rtl="false">
+            <button class="btn" onclick="document.cookie='StarWars=rated;expires=Wed, 01 Jan 2020 00:00:00 UTC;';location.reload()">Confirm Rating</button>                                 
           </div>
           
           <div class="col-md-3">
@@ -92,7 +87,7 @@
             <p class="title">Split</p>
             <button class="btn" onclick="document.cookie='Split=toWatch;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Add to my 'To Watch' list</button>
             <button class="btn" onclick="document.cookie='Split=watched;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Add to my 'Watched' list</button>
-            <div id="el2" style="width:24px;"></div>
+            <input id="el" name="input-name" type="number" class="rating" min=0 max=5 step=0.5 data-size="xs" data-rtl="false">
             <button class="btn" onclick="document.cookie='Split=rated;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Confirm Rating</button>
           </div>
           <div class="col-md-3">
@@ -100,7 +95,7 @@
             <p class="title">Moonlight</p>
             <button class="btn" onclick="document.cookie='Moonlight=toWatch;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Add to my 'To Watch' list</button>
             <button class="btn" onclick="document.cookie='Moonlight=watched;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Add to my 'Watched' list</button>
-            <div id="el3" style="width:24px;"></div>
+            <input id="el" name="input-name" type="number" class="rating" min=0 max=5 step=0.5 data-size="xs" data-rtl="false">
             <button class="btn" onclick="document.cookie='Moonlight=rated;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Confirm Rating</button>
            </div>
           <div class="col-md-3">
@@ -108,7 +103,7 @@
             <p class="title">Arrival</p>
             <button class="btn" onclick="document.cookie='Arrival=toWatch;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload(); ">Add to my 'To Watch' list</button>
             <button class="btn" onclick="document.cookie='Arrival=watched;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Add to my 'Watched' list</button>
-            <div id="el4" style="width:24px;"></div>
+            <input id="el" name="input-name" type="number" class="rating" min=0 max=5 step=0.5 data-size="xs" data-rtl="false">
             <button class="btn" onclick="document.cookie='Arrival=rated;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Confirm Rating</button>
           </div>
         </center>
@@ -116,7 +111,8 @@
     </div>
     
     <script>
-            var el = document.querySelector('#el');
+        $("#el").rating();
+            //var el = document.querySelector('#el');
             var el2 = document.querySelector('#el2');
             var el3 = document.querySelector('#el3');
             var el4 = document.querySelector('#el4');
@@ -124,13 +120,13 @@
             var currentRating = 0;
 
             // max rating, i.e. number of stars you want
-            var maxRating= 5;
+            var maxRating= 2;
 
             // callback to run after setting the rating
-            var callback = function(rating) {};
+            var callback = function(rating) {alert(rating);};
 
             // rating instance
-            var myRating = rating(el, currentRating, maxRating, callback);
+            //var myRating = rating(el, currentRating, maxRating, callback);
             var myRating2 = rating(el2, currentRating, maxRating, callback);
             var myRating3 = rating(el3, currentRating, maxRating, callback);
             var myRating4 = rating(el4, currentRating, maxRating, callback);
