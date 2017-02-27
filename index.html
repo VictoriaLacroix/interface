@@ -78,59 +78,71 @@
             <p class="title">Star Wars Episode IV: A New Hope</p>
             <button class="btn" onclick="document.cookie='StarWars=toWatch;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload()">Add to my 'To Watch' List</button>
             <button class="btn" onclick="document.cookie='StarWars=watched;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload()">Add to my 'Watched' List</button>
-            <input id="el" name="input-name" type="number" class="rating" min=0 max=5 step=0.5 data-size="xs" data-rtl="false">
-            <button class="btn" onclick="document.cookie='StarWars=rated;expires=Wed, 01 Jan 2020 00:00:00 UTC;';location.reload()">Confirm Rating</button>                                 
-          </div>
+            <input id="el" name="input-name" type="number" class="rating" min=0 max=5 step=1 data-size="xs" data-rtl="false">
+           </div>
           
           <div class="col-md-3">
             <img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZTJiNGM2NjItNDRiYy00ZjY0LTgwNTItZDBmZGRlODQ4YThkL2ltYWdlXkEyXkFqcGdeQXVyMjY5ODI4NDk@._V1_SX300.jpg">
             <p class="title">Split</p>
             <button class="btn" onclick="document.cookie='Split=toWatch;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Add to my 'To Watch' list</button>
             <button class="btn" onclick="document.cookie='Split=watched;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Add to my 'Watched' list</button>
-            <input id="el" name="input-name" type="number" class="rating" min=0 max=5 step=0.5 data-size="xs" data-rtl="false">
-            <button class="btn" onclick="document.cookie='Split=rated;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Confirm Rating</button>
+            <input id="el2" name="input-name" type="number" class="rating" min=0 max=5 step=1 data-size="xs" data-rtl="false">
           </div>
           <div class="col-md-3">
             <img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BNzQxNTIyODAxMV5BMl5BanBnXkFtZTgwNzQyMDA3OTE@._V1_SX300.jpg">
             <p class="title">Moonlight</p>
             <button class="btn" onclick="document.cookie='Moonlight=toWatch;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Add to my 'To Watch' list</button>
             <button class="btn" onclick="document.cookie='Moonlight=watched;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Add to my 'Watched' list</button>
-            <input id="el" name="input-name" type="number" class="rating" min=0 max=5 step=0.5 data-size="xs" data-rtl="false">
-            <button class="btn" onclick="document.cookie='Moonlight=rated;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Confirm Rating</button>
+            <input id="el3" name="input-name" type="number" class="rating" min=0 max=5 step=1 data-size="xs" data-rtl="false">
            </div>
           <div class="col-md-3">
             <img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTExMzU0ODcxNDheQTJeQWpwZ15BbWU4MDE1OTI4MzAy._V1_SX300.jpg">
             <p class="title">Arrival</p>
             <button class="btn" onclick="document.cookie='Arrival=toWatch;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload(); ">Add to my 'To Watch' list</button>
             <button class="btn" onclick="document.cookie='Arrival=watched;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Add to my 'Watched' list</button>
-            <input id="el" name="input-name" type="number" class="rating" min=0 max=5 step=0.5 data-size="xs" data-rtl="false">
-            <button class="btn" onclick="document.cookie='Arrival=rated;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Confirm Rating</button>
-          </div>
+            <input id="el4" name="input-name" type="number" class="rating" min=0 max=5 step=1 data-size="xs" data-rtl="false">
+           </div>
         </center>
       </div>
     </div>
     
     <script>
+        var starRating1 = "document.cookie='starRating1=0;expires=Wed, 01 Jan 2020 00:00:00 UTC;'";
+        var starRating2 = "document.cookie='starRating2=0;expires=Wed, 01 Jan 2020 00:00:00 UTC;'";
+        var starRating3 = "document.cookie='starRating3=0;expires=Wed, 01 Jan 2020 00:00:00 UTC;'";
+        var starRating4 = "document.cookie='starRating4=0;expires=Wed, 01 Jan 2020 00:00:00 UTC;'";
         $("#el").rating();
-            //var el = document.querySelector('#el');
-            var el2 = document.querySelector('#el2');
-            var el3 = document.querySelector('#el3');
-            var el4 = document.querySelector('#el4');
-            // current rating, or initial rating
-            var currentRating = 0;
-
-            // max rating, i.e. number of stars you want
-            var maxRating= 2;
-
-            // callback to run after setting the rating
-            var callback = function(rating) {alert(rating);};
-
-            // rating instance
-            //var myRating = rating(el, currentRating, maxRating, callback);
-            var myRating2 = rating(el2, currentRating, maxRating, callback);
-            var myRating3 = rating(el3, currentRating, maxRating, callback);
-            var myRating4 = rating(el4, currentRating, maxRating, callback);
+        $("#el2").rating();
+        $("#el3").rating();
+        $("#el4").rating();
+        
+        $('#el').on('change', function(){          
+          starRating1 = $(this).val();
+          starRating1 = document.cookie='starRating1='+starRating1+';expires=Wed, 01 Jan 2020 00:00:00 UTC;'
+          location.reload();
+        });  
+         $('#el2').on('change', function(){ 
+           starRating2 = $(this).val();
+           starRating2 = document.cookie='starRating2='+starRating2+';expires=Wed, 01 Jan 2020 00:00:00 UTC;'
+           location.reload();
+         });
+         $('#el3').on('change', function(){ 
+           starRating3 = $(this).val();
+           starRating3 = document.cookie='starRating3='+starRating3+';expires=Wed, 01 Jan 2020 00:00:00 UTC;'
+           location.reload();
+         });
+         $('#el4').on('change', function(){ 
+           starRating4 = $(this).val();
+           starRating4 = document.cookie='starRating4='+starRating4+';expires=Wed, 01 Jan 2020 00:00:00 UTC;'
+           location.reload();
+         });
+        
     </script>
+            
+    
+    
+    
+    
     <ul class="nav nav-tabs" id="tabs">
       <li class="active" width="100px"><a data-toggle="tab" href="#not-watched">To Watch</a></li>
       <li><a data-toggle="tab" href="#watched">Watched</a></li>

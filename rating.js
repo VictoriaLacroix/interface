@@ -169,4 +169,3 @@
   window.rating = rating;
 
 })();
-
