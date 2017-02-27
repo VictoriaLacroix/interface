@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="index.css">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -28,7 +28,8 @@
     <!-- Dependencies -->
     <script src="jquery.js"></script>
     <script src="js-cookie.js"></script>
-
+    <script src="rating.js"></script>
+    
      <!-- Main script file -->
     <script src="main.js"></script>
 
@@ -41,13 +42,12 @@
       body {
         padding-top: 50px;
       }
-
       .poster {
         height: 180px;
       }
     </style>
   </head>
-  <body onload="loadFilms();displayToWatch()">
+  <body onload="loadFilms();displayToWatch();rateMovie1()">
     <!--Main Nav Bar-->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -71,40 +71,76 @@
     <div class="container">
       <div id="search-results" class="row collapse">
         <center>
-          <div class="col-md-2">
+          <div class="col-md-3">
+          
             <img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZGEzZTExMDEtNjg4OC00NjQxLTk5NTUtNjRkNjA3MmYwZjg1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg">
-            <p>Star Wars Episode IV: A New Hope</p>
-            <!--<button onclick="setStatusById('tt0076759', 'ToWatch')">+</button>-->
-            <button onclick="document.cookie='StarWars=toWatch;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Add to my 'To Watch' list</button>
-            <button onclick="document.cookie='StarWars=watched;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Add to my 'Watched' list</button>
-            <button onclick="document.cookie='StarWars=rated;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Rate</button>
+            <p class="title">Star Wars Episode IV: A New Hope</p>
+            <button class="btn" onclick="document.cookie='StarWars=toWatch;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload()">Add to my 'To Watch' List</button>
+            <button class="btn" onclick="document.cookie='StarWars=watched;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload()">Add to my 'Watched' List</button>
+            <div id="el" style="width:24px;"></div>
+            <button class="btn" onclick="document.cookie='StarWars=rated;expires=Wed, 01 Jan 2020 00:00:00 UTC;';location.reload()">Confirm Rating</button>           
+            
+            
+            
+            
+            
             
           </div>
-          <div id=poster2 class="col-md-2">
+          
+          <div class="col-md-3">
             <img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZTJiNGM2NjItNDRiYy00ZjY0LTgwNTItZDBmZGRlODQ4YThkL2ltYWdlXkEyXkFqcGdeQXVyMjY5ODI4NDk@._V1_SX300.jpg">
-            <p>Split</p>
-            <button onclick="document.cookie='Split=toWatch;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Add to my 'To Watch' list</button>
-            <button onclick="document.cookie='Split=watched;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Add to my 'Watched' list</button>
-            <button onclick="document.cookie='Split=rated;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Rate</button>
+            <p class="title">Split</p>
+            <button class="btn" onclick="document.cookie='Split=toWatch;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Add to my 'To Watch' list</button>
+            <button class="btn" onclick="document.cookie='Split=watched;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Add to my 'Watched' list</button>
+            <div id="el2" style="width:24px;"></div>
+            <button class="btn" onclick="document.cookie='Split=rated;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Confirm Rating</button>
           </div>
-          <div class="col-md-2">
+          <div class="col-md-3">
             <img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BNzQxNTIyODAxMV5BMl5BanBnXkFtZTgwNzQyMDA3OTE@._V1_SX300.jpg">
-            <p>Moonlight</p>
-            <button onclick="document.cookie='Moonlight=toWatch;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Add to my 'To Watch' list</button>
-            <button onclick="document.cookie='Moonlight=watched;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Add to my 'Watched' list</button>
-            <button onclick="document.cookie='Moonlight=rated;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Rate</button>
+            <p class="title">Moonlight</p>
+            <button class="btn" onclick="document.cookie='Moonlight=toWatch;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Add to my 'To Watch' list</button>
+            <button class="btn" onclick="document.cookie='Moonlight=watched;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Add to my 'Watched' list</button>
+            <div id="el3" style="width:24px;"></div>
+            <button class="btn" onclick="document.cookie='Moonlight=rated;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Confirm Rating</button>
            </div>
-          <div class="col-md-2">
+          <div class="col-md-3">
             <img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTExMzU0ODcxNDheQTJeQWpwZ15BbWU4MDE1OTI4MzAy._V1_SX300.jpg">
-            <p>Arrival</p>
-            <button onclick="document.cookie='Arrival=toWatch;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload(); ">Add to my 'To Watch' list</button>
-            <button onclick="document.cookie='Arrival=watched;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Add to my 'Watched' list</button>
-            <button onclick="document.cookie='Arrival=rated;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Rate</button>
+            <p class="title">Arrival</p>
+            <button class="btn" onclick="document.cookie='Arrival=toWatch;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload(); ">Add to my 'To Watch' list</button>
+            <button class="btn" onclick="document.cookie='Arrival=watched;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Add to my 'Watched' list</button>
+            <div id="el4" style="width:24px;"></div>
+            <button class="btn" onclick="document.cookie='Arrival=rated;expires=Wed, 01 Jan 2020 00:00:00 UTC;'; location.reload();">Confirm Rating</button>
           </div>
         </center>
       </div>
     </div>
-    <ul class="nav nav-tabs">
+    
+    <script>
+            var el = document.querySelector('#el');
+            var el2 = document.querySelector('#el2');
+            var el3 = document.querySelector('#el3');
+            var el4 = document.querySelector('#el4');
+            // current rating, or initial rating
+            var currentRating = 0;
+
+            // max rating, i.e. number of stars you want
+            var maxRating= 5;
+
+            // callback to run after setting the rating
+            var callback = function(rating) {};
+
+            // rating instance
+            var myRating = rating(el, currentRating, maxRating, callback);
+            var myRating2 = rating(el2, currentRating, maxRating, callback);
+            var myRating3 = rating(el3, currentRating, maxRating, callback);
+            var myRating4 = rating(el4, currentRating, maxRating, callback);
+    </script>
+            
+    
+    
+    
+    
+    <ul class="nav nav-tabs" id="tabs">
       <li class="active" width="100px"><a data-toggle="tab" href="#not-watched">To Watch</a></li>
       <li><a data-toggle="tab" href="#watched">Watched</a></li>
       <li><a data-toggle="tab" href="#rated">Rated</a></li>

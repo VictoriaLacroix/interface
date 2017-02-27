@@ -6,7 +6,7 @@ body{
 .nav-tabs{
   /*background-color:#161616;*/
 }
-.tab-content > #home{
+.tab-content > #not-watched{
     
     background: #009900; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(#1aff1a, #006600); /* For Safari 5.1 to 6.0 */
@@ -20,7 +20,7 @@ body{
 
 }
 
-.tab-content > #menu1{
+.tab-content > #watched{
     
     background: #0000e6; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(#0000e6, #006600); /* For Safari 5.1 to 6.0 */
@@ -34,7 +34,7 @@ body{
 
 }
 
-.tab-content > #menu2{
+.tab-content > #rated{
     
     background: #e6b800; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(#e6b800, #006600); /* For Safari 5.1 to 6.0 */
@@ -75,7 +75,7 @@ border-radius: -3;
     /*color:#fff;*/
 }
 
-.nav-tabs > li.active > a[href="#home"]{
+.nav-tabs > li.active > a[href="#not-watched"]{
   	background-color: #1aff1a !important;
     border: medium none;
     border-radius: 0;
@@ -83,7 +83,7 @@ border-radius: -3;
     /*color:#fff;*/
 }
 
-.nav-tabs > li.active > a[href="#menu1"]{
+.nav-tabs > li.active > a[href="#watched"]{
   	background-color: #0000e6 !important;
     border: medium none;
     border-radius: 0;
@@ -92,7 +92,7 @@ border-radius: -3;
 }
 
 
-.nav-tabs > li.active > a[href="#menu2"]{
+.nav-tabs > li.active > a[href="#rated"]{
   	background-color: #e6b800 !important;
     border: medium none;
     border-radius: 0;
@@ -125,5 +125,65 @@ border-radius: -3;
     width: 100%;
     border: 0;
     height: 200px;
+}
+
+.title{
+    color:white;
+}
+.btn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  margin: 10px 10px 10px 10px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+/* -----------------------------------------------------------------------------
+  COMPENENTS - RATING
+  
+----------------------------------------------------------------------------- */
+.c-rating {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c-rating__item {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 24px;
+      -ms-flex: 0 0 24px;
+          flex: 0 0 24px;
+  height: 24px;
+  background: url("stars.svg");
+  background-position: 0 0;
+  cursor: pointer;
+}
+
+.c-rating__item:hover,
+.c-rating__item.is-active {
+  background-position: -24px 0;
 }
 

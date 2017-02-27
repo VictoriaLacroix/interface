@@ -89,46 +89,52 @@ function displayToWatch(){
   for(var i=0;i<result.length;i++){
     //To Watch tab:
     if(result[i] == 'StarWars=toWatch'){
-      $('#not-watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZGEzZTExMDEtNjg4OC00NjQxLTk5NTUtNjRkNjA3MmYwZjg1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"><p>Star Wars Episode IV: A New Hope</p><button onclick="document.cookie=\'StarWars=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
+      $('#not-watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZGEzZTExMDEtNjg4OC00NjQxLTk5NTUtNjRkNjA3MmYwZjg1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"><p>Star Wars Episode IV: A New Hope</p><button class="btn" onclick="document.cookie=\'StarWars=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
     }  
     if(result[i] == 'Split=toWatch'){
-      $('#not-watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZTJiNGM2NjItNDRiYy00ZjY0LTgwNTItZDBmZGRlODQ4YThkL2ltYWdlXkEyXkFqcGdeQXVyMjY5ODI4NDk@._V1_SX300.jpg"><p>Split</p><button onclick="document.cookie=\'Split=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
+      $('#not-watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZTJiNGM2NjItNDRiYy00ZjY0LTgwNTItZDBmZGRlODQ4YThkL2ltYWdlXkEyXkFqcGdeQXVyMjY5ODI4NDk@._V1_SX300.jpg"><p>Split</p><button class="btn" onclick="document.cookie=\'Split=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
     }  
     if(result[i] == 'Moonlight=toWatch'){
-      $('#not-watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BNzQxNTIyODAxMV5BMl5BanBnXkFtZTgwNzQyMDA3OTE@._V1_SX300.jpg"><p>Moonlight</p><button onclick="document.cookie=\'Moonlight=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
+      $('#not-watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BNzQxNTIyODAxMV5BMl5BanBnXkFtZTgwNzQyMDA3OTE@._V1_SX300.jpg"><p>Moonlight</p><button class="btn" onclick="document.cookie=\'Moonlight=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
     }  
     if(result[i] == 'Arrival=toWatch'){
-      $('#not-watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTExMzU0ODcxNDheQTJeQWpwZ15BbWU4MDE1OTI4MzAy._V1_SX300.jpg"><p>Arrival</p><button onclick="document.cookie=\'Arrival=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
+      $('#not-watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTExMzU0ODcxNDheQTJeQWpwZ15BbWU4MDE1OTI4MzAy._V1_SX300.jpg"><p>Arrival</p><button class="btn" onclick="document.cookie=\'Arrival=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
     }
     //Watched tab:
     if(result[i] == 'StarWars=watched'){
-      $('#watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZGEzZTExMDEtNjg4OC00NjQxLTk5NTUtNjRkNjA3MmYwZjg1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"><p>Star Wars Episode IV: A New Hope</p><button onclick="document.cookie=\'StarWars=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
+      $('#watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZGEzZTExMDEtNjg4OC00NjQxLTk5NTUtNjRkNjA3MmYwZjg1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"><p>Star Wars Episode IV: A New Hope</p><button class="btn" onclick="document.cookie=\'StarWars=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
     }  
     if(result[i] == 'Split=watched'){
-      $('#watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZTJiNGM2NjItNDRiYy00ZjY0LTgwNTItZDBmZGRlODQ4YThkL2ltYWdlXkEyXkFqcGdeQXVyMjY5ODI4NDk@._V1_SX300.jpg"><p>Split</p><button onclick="document.cookie=\'Split=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
+      $('#watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZTJiNGM2NjItNDRiYy00ZjY0LTgwNTItZDBmZGRlODQ4YThkL2ltYWdlXkEyXkFqcGdeQXVyMjY5ODI4NDk@._V1_SX300.jpg"><p>Split</p><button class="btn" onclick="document.cookie=\'Split=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
     }  
     if(result[i] == 'Moonlight=watched'){
-      $('#watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BNzQxNTIyODAxMV5BMl5BanBnXkFtZTgwNzQyMDA3OTE@._V1_SX300.jpg"><p>Moonlight</p><button onclick="document.cookie=\'Moonlight=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
+      $('#watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BNzQxNTIyODAxMV5BMl5BanBnXkFtZTgwNzQyMDA3OTE@._V1_SX300.jpg"><p>Moonlight</p><button class="btn" onclick="document.cookie=\'Moonlight=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
     }  
     if(result[i] == 'Arrival=watched'){
-      $('#watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTExMzU0ODcxNDheQTJeQWpwZ15BbWU4MDE1OTI4MzAy._V1_SX300.jpg"><p>Arrival</p><button onclick="document.cookie=\'Arrival=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
+      $('#watched-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTExMzU0ODcxNDheQTJeQWpwZ15BbWU4MDE1OTI4MzAy._V1_SX300.jpg"><p>Arrival</p><button class="btn" onclick="document.cookie=\'Arrival=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
     }
     //Rated tab:
     if(result[i] == 'StarWars=rated'){
-      $('#rated-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZGEzZTExMDEtNjg4OC00NjQxLTk5NTUtNjRkNjA3MmYwZjg1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"><p>Star Wars Episode IV: A New Hope</p><button onclick="document.cookie=\'StarWars=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
+      $('#rated-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZGEzZTExMDEtNjg4OC00NjQxLTk5NTUtNjRkNjA3MmYwZjg1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"><p>Star Wars Episode IV: A New Hope</p><button class="btn" onclick="document.cookie=\'StarWars=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
     }  
     if(result[i] == 'Split=rated'){
-      $('#rated-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZTJiNGM2NjItNDRiYy00ZjY0LTgwNTItZDBmZGRlODQ4YThkL2ltYWdlXkEyXkFqcGdeQXVyMjY5ODI4NDk@._V1_SX300.jpg"><p>Split</p><button onclick="document.cookie=\'Split=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
+      $('#rated-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZTJiNGM2NjItNDRiYy00ZjY0LTgwNTItZDBmZGRlODQ4YThkL2ltYWdlXkEyXkFqcGdeQXVyMjY5ODI4NDk@._V1_SX300.jpg"><p>Split</p><button class="btn" onclick="document.cookie=\'Split=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
     }  
     if(result[i] == 'Moonlight=rated'){
-      $('#rated-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BNzQxNTIyODAxMV5BMl5BanBnXkFtZTgwNzQyMDA3OTE@._V1_SX300.jpg"><p>Moonlight</p><button onclick="document.cookie=\'Moonlight=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
+      $('#rated-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BNzQxNTIyODAxMV5BMl5BanBnXkFtZTgwNzQyMDA3OTE@._V1_SX300.jpg"><p>Moonlight</p><button class="btn" onclick="document.cookie=\'Moonlight=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
     }  
     if(result[i] == 'Arrival=rated'){
-      $('#rated-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTExMzU0ODcxNDheQTJeQWpwZ15BbWU4MDE1OTI4MzAy._V1_SX300.jpg"><p>Arrival</p><button onclick="document.cookie=\'Arrival=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
+      $('#rated-contents').append('<img class="poster" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTExMzU0ODcxNDheQTJeQWpwZ15BbWU4MDE1OTI4MzAy._V1_SX300.jpg"><p>Arrival</p><button class="btn" onclick="document.cookie=\'Arrival=;expires=Thu, 01 Jan 1970 00:00:00 UTC;\'; location.reload();">Remove</button><br/><br/>');      
     }
   }
   
   return res;
+}
+
+function goToWatched(){
+  $('.nav-tabs a').click(function(){
+    $('watched').tab('show');
+  })
 }
 
 /*
@@ -171,10 +177,11 @@ function searchJSONBySearchBar() {
 function searchJSONByTitle(title) {
   $.get('Movie_Database.json', function(response) {
     var results = [];
-    $.each(JSON.parse(response), function(idx, movie) {
+    $.each(response, function(idx, movie) {
       var current = movie.Title.toLowerCase();
       if(!current.search(title.toLowerCase())) {
-        results.push(createMovie(movie));
+        alert(current);
+        //results.push(createMovie(movie));
       }
     });
     // create results div
@@ -298,7 +305,7 @@ function getMovieById(id) {
   return movies[arrayIndexOf(movieIDs, id)];
 }
 
-function stringify(x) {
-    console.log(Object.prototype.toString.call(x));
+function rateMovie1(){
+  
 }
 
