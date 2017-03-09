@@ -452,8 +452,12 @@ function arrayIndexOf(arr, obj) {
 function getMovieById(id) {
   return movies[arrayIndexOf(movieIDs, id)];
 }
-
 function rateMovie1(){
   
 }
+
+
+
+
+
 
